@@ -2,7 +2,7 @@
 from matplotlib import pyplot
 from numpy.random import normal
 # generate a sample
-sample = normal(size=1000)
+sample = normal(size=10000)
 # plot a histogram of the sample
-pyplot.hist(sample, bins=10)
+pyplot.hist(sample, bins=20)
 pyplot.show()
