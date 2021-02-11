@@ -11,6 +11,29 @@ fileNames = os.listdir(PATH)
 # Filter file name list for files ending with .csv
 fileNames = [file for file in fileNames if '.csv' in file]
 
+IPCA = pd.DataFrame(pd.read_csv(PATH + fileNames[0]))
+Desemprego = pd.DataFrame(pd.read_csv(PATH + fileNames[1]))
+
+Desemprego = Desemprego.set_index("Data")
+IPCA = IPCA.set_index("Data")
+
+print(Desemprego.head())
+print(IPCA.head())
+
+df3 = pd.merge(IPCA, Desemprego, left_index=True, right_index=True)
+df3 = df3[[' IPCA ','Taxa de desemprego ']]
+print(df3.head())
+
+plt.plot(df3.iloc[:, 0], label="IPCA")
+plt.plot(df3.iloc[:, 1], label="Tx. Desemprego")
+#plt.plot(df3)
+
+#print(df3.iloc[:, 0])
+plt.legend()
+plt.show()
+
+#Desemprego.iloc[0,0]
+"""
 # Loop over all files
 for file in fileNames:
 
@@ -22,3 +45,4 @@ for file in fileNames:
 
 # Generate the plot
 plt.show()
+"""
