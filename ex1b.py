@@ -4,10 +4,10 @@ import numpy as np
 fig, ax = plt.subplots(1, 1)
 
 x = np.linspace(-2, 2, 100)
-rv = uniform(-0.999, 1.999)
-ex_vec1 = [0.001, 0.5, 0.999]
+rv = uniform(-1, 2)
+ex_vec1 = [0, 0.5, 1]
 
-ax.plot(x, rv.cdf(x), 'k-', lw=2, label='CPF')
+ax.plot(x, rv.cdf(x), 'k-', lw=2, label='CDF')
 
 vals = uniform.ppf(ex_vec1)
 np.allclose(ex_vec1, uniform.cdf(vals))
