@@ -33,11 +33,11 @@ plt.plot(df3.iloc[:, 1], label="Tx. Desemprego")
 
 plt.legend()
 #Generate the plot
-#plt.show()
+plt.show()
 
 print("IPCA Mean: ", np.mean(df3.iloc[:, 0]))
-print("IPCA Variance: ", np.var(df3.iloc[:, 1]))
-print("IPCA Standard Deviation: ", np.std(df3.iloc[:, 1]))
+print("IPCA Variance: ", np.var(df3.iloc[:, 0]))
+print("IPCA Standard Deviation: ", np.std(df3.iloc[:, 0]))
 
 print("Taxa de desemprego Mean: ", np.mean(df3.iloc[:, 1]))
 print("Taxa de desemprego Variance: ", np.var(df3.iloc[:, 1]))
